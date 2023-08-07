@@ -11,6 +11,7 @@ public class SignInPage {
         this.signInPage = page;
     }
     public void signIn(String email, String password){
+        signInPage.pause();
         signInPage.locator(EMAIL).fill(email);
         signInPage.locator(PASSWORD).fill(password);
         signInPage.locator(SIGN_IN_BUTTON).click();
