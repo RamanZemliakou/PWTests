@@ -5,7 +5,12 @@ public class FirstTest extends PlaywrightRunner{
     @Test
     public void firstTest(){
         page.navigate(getProperty("url"));
-        page.locator("a:has-text(\"Deal of the Day\")").click();
+        Locator menuItems = page.locator("ul.bottom-nav-left li a");
+
+        for (int i = 0; i < menuItems.count(); i++)
+            System.out.println(menuItems.nth(i).textContent());
+
+        page.locator("ul.bottom-nav-left li a", new Page.LocatorOptions().setHasText("Deal of the Day")).click();
 
         System.out.println("OK");
     }

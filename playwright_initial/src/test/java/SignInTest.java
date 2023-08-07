@@ -7,6 +7,7 @@ public class SignInTest extends PlaywrightRunner{
         homePage.navigate();
         accountNavigationPage.navigateTo(AccountEntries.SIGN_IN);
         signInPage.signIn(getProperty("email"), getProperty("password"));
-
+        homePage.checkWeAreOnHomePage();
+//        System.out.println("OK");
     }
 }
